@@ -99,7 +99,14 @@ const VoterLogin = () => {
         'size': 'invisible',
         'callback': (response) => {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
+        },
+        'expired-callback': () => {
+        // Handle expiration by clearing the verifier
+        if (window.recaptchaVerifier) {
+          window.recaptchaVerifier.clear();
+          window.recaptchaVerifier = null;
         }
+      }
       });
     }
   };
@@ -185,13 +192,16 @@ const VoterLogin = () => {
     setError(err.response?.data?.error || err.message || "Authentication failed.");
 
     // Safely clear reCAPTCHA to prevent the "RecaptchaVerifier.clear" crash
-    if (window.recaptchaVerifier && typeof window.recaptchaVerifier.clear === 'function') {
-      try {
-        window.recaptchaVerifier.clear();
-        window.recaptchaVerifier = null;
-      } catch (cleanupErr) {
-        console.error("Cleanup error:", cleanupErr);
-      }
+    if (window.recaptchaVerifier) {
+    try {
+      window.recaptchaVerifier.clear();
+      window.recaptchaVerifier = null;
+      // Force clear the DOM element to allow a fresh render next time
+      const container = document.getElementById('recaptcha-container');
+      if (container) container.innerHTML = ''; 
+    } catch (cleanupErr) {
+      console.error("Cleanup error:", cleanupErr);
+    }
     }
   } finally {
     setLoading(false);
