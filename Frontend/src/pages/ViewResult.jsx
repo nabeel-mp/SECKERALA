@@ -229,7 +229,7 @@ const VoterResults = () => {
                              >
                                   {candidate.party_logo ? (
                                       <img 
-                                        src={`http://localhost:8080${candidate.party_logo}`} 
+                                        src={`${import.meta.env.VITE_API_BASE_URL}${candidate.party_logo}`}
                                         alt={candidate.party_name} 
                                         className="w-full h-full object-contain"
                                       />
@@ -244,7 +244,7 @@ const VoterResults = () => {
                       <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center shadow-lg mb-3 p-2 overflow-hidden">
                           {winner.party_logo ? (
                               <img 
-                                src={`http://localhost:8080${winner.party_logo}`} 
+                                src={`${import.meta.env.VITE_API_BASE_URL}${winner.party_logo}`}
                                 alt={winner.party_name} 
                                 className="w-full h-full object-contain"
                               />

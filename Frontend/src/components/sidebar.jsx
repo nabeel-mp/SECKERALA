@@ -126,7 +126,7 @@ const Sidebar = () => {
                     <div className="flex items-center gap-3 w-full overflow-hidden">
                         <div className="shrink-0 w-10 h-10 flex items-center justify-center">
                             <img
-                                src={systemLogo ? `https://seckerala.vercel.app/${systemLogo}` : {nationalEmblem}}
+                                src={systemLogo ? `${import.meta.env.VITE_API_BASE_URL}${systemLogo}` : {nationalEmblem}}
                                 alt="Logo"
                                 className="max-h-full max-w-full object-contain"
                                 onError={(e) => {

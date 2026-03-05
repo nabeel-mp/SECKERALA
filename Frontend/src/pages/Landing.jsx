@@ -7,6 +7,8 @@ import {
   ShieldCheck, Users, Award, ExternalLink
 } from 'lucide-react';
 import nationalEmblem from '../assets/NationalEmblem.png';
+import keralaassembly from '../assets/Inside_View_of_Kerala_Legislative_Assembly.jpg';
+import justice from '../assets/justice.png';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -160,11 +162,11 @@ const Landing = () => {
         <section className="relative min-h-[90vh] lg:min-h-[800px] flex items-center bg-slate-900 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Kerala_Legislative_Assembly_Building.jpg/2560px-Kerala_Legislative_Assembly_Building.jpg" 
+              src={keralaassembly} 
               alt="Kerala Assembly" 
               className="w-full h-full object-cover opacity-60 sm:opacity-100 scale-110 sm:scale-105"
             />
-            {/* Improved Gradients for readability */}
+            {/* /* Improved Gradients for readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/40 sm:to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
           </div>
@@ -277,7 +279,7 @@ const Landing = () => {
                   className="aspect-[4/5] sm:aspect-square rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl relative z-10"
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80&w=2070&auto=format&fit=crop" 
+                    src={justice} 
                     alt="SEC Office" 
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />
@@ -415,7 +417,7 @@ const Landing = () => {
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 h-fit">
               <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Official Authentication</p>
               <div className="flex items-center gap-4">
-                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" className="h-10 grayscale opacity-50" alt="Emblem" />
+                 <img src={nationalEmblem} className="h-10 grayscale opacity-50" alt="Emblem" />
                  <div className="text-[11px] leading-tight">
                     <p className="font-bold text-slate-900">NIC Kerala</p>
                     <p>Technopark, TVM</p>

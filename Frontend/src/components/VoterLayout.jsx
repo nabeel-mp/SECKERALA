@@ -7,6 +7,7 @@ import {
   Phone, Mail, MapPin, AlertTriangle 
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Emblem from "../assets/NationalEmblem.png"
 
 const VoterLayout = () => {
   const { user, logout } = useAuth();
@@ -67,7 +68,7 @@ const VoterLayout = () => {
           <Link to="/portal" className="flex items-center gap-3 group">
             <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full border border-slate-200 p-1 shadow-sm group-hover:shadow-md transition-all flex items-center justify-center">
                 <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
+                    src={Emblem}
                     alt="Emblem" 
                     className="h-full w-auto object-contain opacity-90"
                 />
@@ -184,7 +185,7 @@ const VoterLayout = () => {
           {/* Brand Col */}
           <div className="space-y-4">
              <div className="flex items-center gap-3 text-white">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="India" className="h-8 grayscale invert opacity-80"/>
+                <img src={Emblem} alt="India" className="h-8 grayscale invert opacity-80"/>
                 <span className="font-bold tracking-tight">SEC Kerala</span>
              </div>
              <p className="text-xs leading-relaxed opacity-70">

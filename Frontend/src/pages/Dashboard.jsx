@@ -65,7 +65,7 @@ const Dashboard = () => {
     if (wsRef.current && (wsRef.current.readyState === WebSocket.OPEN || wsRef.current.readyState === WebSocket.CONNECTING)) {
         return; 
     }
-    const wsUrl = 'ws://localhost:8080/ws/notifications';
+    const wsUrl = 'ws:https://seckerala.vercel.app/ws/notifications';
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
 

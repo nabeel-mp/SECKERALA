@@ -158,7 +158,7 @@ const VotingBooth = () => {
                         selectedCandidate?.ID === candidate.ID ? 'bg-slate-800 border-slate-700' : 'bg-slate-50 border-slate-100'
                     }`}>
                        {candidate.photo ? (
-                           <img src={`http://localhost:8080${candidate.photo}`} className="w-full h-full object-cover" alt={candidate.full_name} />
+                           <img src={`${import.meta.env.VITE_API_BASE_URL}${candidate.photo}`} className="w-full h-full object-cover" alt={candidate.full_name} />
                        ) : (
                            <div className={`w-full h-full flex items-center justify-center font-bold text-xl ${
                                selectedCandidate?.ID === candidate.ID ? 'text-slate-400' : 'text-slate-300'
@@ -173,7 +173,7 @@ const VotingBooth = () => {
                         
                         <div className="flex items-center gap-2 mt-1">
                             {candidate.party?.logo ? (
-                                <img src={`http://localhost:8080${candidate.party.logo}`} className="w-5 h-5 object-contain" alt="Party Logo" />
+                                <img src={`${import.meta.env.VITE_API_BASE_URL}${candidate.party.logo}`} className="w-5 h-5 object-contain" alt="Party Logo" />
                             ) : null}
                             <span className={`text-sm font-medium ${
                                 selectedCandidate?.ID === candidate.ID ? 'text-slate-400' : 'text-slate-500'
