@@ -23,6 +23,8 @@ import {
     ShieldCheck,
     AlertTriangle // Added for modal
 } from 'lucide-react';
+import nationalEmblem from '../assets/NationalEmblem.png';
+
 
 const Sidebar = () => {
     const { user, logout } = useAuth();
@@ -124,11 +126,11 @@ const Sidebar = () => {
                     <div className="flex items-center gap-3 w-full overflow-hidden">
                         <div className="shrink-0 w-10 h-10 flex items-center justify-center">
                             <img
-                                src={systemLogo ? `http://localhost:8080${systemLogo}` : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/100px-Emblem_of_India.svg.png"}
+                                src={systemLogo ? `https://seckerala.vercel.app/${systemLogo}` : {nationalEmblem}}
                                 alt="Logo"
                                 className="max-h-full max-w-full object-contain"
                                 onError={(e) => {
-                                    e.target.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/100px-Emblem_of_India.svg.png";
+                                    e.target.src = {nationalEmblem};
                                 }}
                             />
                         </div>

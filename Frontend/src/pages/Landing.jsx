@@ -6,6 +6,7 @@ import {
   CheckCircle2, Phone, Menu, X, ArrowUpRight,
   ShieldCheck, Users, Award, ExternalLink
 } from 'lucide-react';
+import nationalEmblem from '../assets/NationalEmblem.png';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           <div className="flex items-center gap-3 sm:gap-4">
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/100px-Emblem_of_India.svg.png" 
+              src={nationalEmblem}
               alt="National Emblem" 
               className="h-8 sm:h-12 w-auto"
             />
